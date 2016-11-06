@@ -1,0 +1,42 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+class Students{
+	private:
+		char name[30],stu_id[30];
+		int age,g1,g2,g3,g4,average;
+	public:
+		Students(char aname[],int aage,char astu_id[],int ag1,int ag2,int ag3,int ag4){
+			strcpy(name,aname);
+			age=aage;
+			strcpy(stu_id,astu_id);
+			g1=ag1;
+			g2=ag2;
+			g3=ag3;
+			g4=ag4;
+		}
+		int getAverage(){
+			return (g1+g2+g3+g4)/4;
+		}
+		char *getName(){
+			return name;
+		}
+		char *getStu_id(){
+			return stu_id;
+		}
+		int getAge(){
+			return age;
+		}
+		
+}; 
+int main(){
+	char name[30],a,stu_id[30];
+	int g1,g2,g3,g4,age;
+	cin.getline(name,30,',');
+	cin>>age>>a;
+	cin.getline(stu_id,30,',');
+	cin>>g1>>a>>g2>>a>>g3>>a>>g4;
+	Students s(name,age,stu_id,g1,g2,g3,g4);
+	cout<<s.getName()<<a<<s.getAge()<<a<<s.getStu_id()<<a<<s.getAverage();
+	return 0;
+}
